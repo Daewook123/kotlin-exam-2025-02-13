@@ -19,6 +19,13 @@ fun main() {
                 quoteList.add(Quote(text, author));
                 println("${quoteList.size}번째 명언이 등록되었습니다.")
             }
+            "목록" ->{
+                println("번호 / 작가 / 명언")
+                println("--------------------")
+                for(quote in quoteList.reversed()){
+                    println("${quoteList.indexOf(quote)+1} / ${quote.author} / ${quote.text}")
+                }
+            }
             "종료" ->{
                 break;
             }
