@@ -27,6 +27,29 @@ fun main() {
                     println("${quote.id} / ${quote.author} / ${quote.text}")
                 }
             }
+            "수정" ->{
+                print("명언 번호를 입력하세요 : ")
+                val num = readlnOrNull() ?: ""
+                try {
+                    val targetQuote = quoteList.find { it.id == num.toInt() }
+                    if (targetQuote == null) {
+                        println("${num}번 명언은 존재하지 않습니다.")
+                    } else {
+                        println("명언(기존) : ${targetQuote.text}")
+                        print("명언을 입력하세요 : ")
+                        val text = readlnOrNull() ?: ""
+
+                        println("저자(기존) : ${targetQuote.author}")
+                        print("저자를 입력하세요 : ")
+                        val author = readlnOrNull() ?: ""
+
+                        targetQuote.text = text
+                        targetQuote.author = author
+                    }
+                } catch (e: Exception) {
+                    println("${num}번 명언은 존재하지 않습니다.")
+                }
+            }
             "삭제" -> {
                 print("명언 번호를 입력하세요 : ")
                 val num = readlnOrNull() ?: ""
