@@ -6,6 +6,6 @@ import kotlinx.serialization.Serializable
 
 
 @Serializable
-class Quote(var id:Int, var text: String, var author: String) {
+class Quote(var id:Int, var content: String, var author: String) {
 
 }
